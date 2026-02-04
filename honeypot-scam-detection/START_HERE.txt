@@ -1,0 +1,232 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║     🎣 HONEYPOT SCAM DETECTION API - GUVI HACKATHON 🎣      ║
+║                                                              ║
+║              AI-Powered Agentic Scam Intelligence            ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+📦 WHAT'S INCLUDED IN THIS ZIP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Core Application Files:
+   • app.py                 - Main application (use this!)
+   • app_advanced.py        - Advanced version with logging
+   • requirements.txt       - Python dependencies
+
+✅ Setup & Running:
+   • start.bat             - Double-click to start (Windows)
+   • run_server.py         - Production server script
+   • .env.example          - Configuration template
+
+✅ Documentation:
+   • WINDOWS_SETUP.md      - ⭐ START HERE for Windows!
+   • QUICKSTART.md         - 5-minute setup guide
+   • README.md             - Complete documentation
+   • TROUBLESHOOTING.md    - Fix common errors
+   • DEPLOYMENT.md         - Deploy to cloud
+
+✅ Testing:
+   • test_api.py           - Automated test suite
+
+✅ Deployment:
+   • Dockerfile            - Docker containerization
+   • docker-compose.yml    - Docker Compose setup
+   • setup.sh              - Linux/Mac setup script
+
+
+🚀 QUICK START (WINDOWS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Install Python 3.12 (NOT 3.14!)
+   Download: https://www.python.org/downloads/
+
+2. Extract this zip to a folder
+
+3. Open PowerShell in the extracted folder
+
+4. Run these commands:
+
+   py -3.12 -m venv .venv
+   .venv\Scripts\activate
+   pip install -r requirements.txt
+
+5. Configure your API keys:
+
+   copy .env.example .env
+   notepad .env
+   
+   Add your keys (no quotes):
+   HONEYPOT_API_KEY=your-secret-key
+   ANTHROPIC_API_KEY=sk-ant-your-key-here
+
+6. Start the server:
+
+   python app.py
+
+   OR double-click: start.bat
+
+7. Test in browser:
+
+   http://localhost:5000/
+
+
+📖 READ FIRST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👉 For detailed Windows setup: WINDOWS_SETUP.md
+👉 For quick 5-min guide: QUICKSTART.md
+👉 For troubleshooting: TROUBLESHOOTING.md
+
+
+⚡ FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ AI-powered scam detection using Claude
+✓ Autonomous agent with human-like responses
+✓ Extracts bank accounts, UPI IDs, phone numbers, links
+✓ Multi-turn conversation handling
+✓ Automatic GUVI callback reporting
+✓ RESTful API with authentication
+✓ Session tracking and intelligence gathering
+
+
+🎯 PROJECT STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+honeypot-scam-detection/
+├── 📄 app.py                    ⭐ Main application
+├── 📄 requirements.txt          Dependencies
+├── 📄 .env                      Your config (create this)
+├── 🚀 start.bat                 Quick start (Windows)
+├── 📖 WINDOWS_SETUP.md          ⭐ Read this first!
+├── 📖 QUICKSTART.md             5-minute guide
+├── 📖 README.md                 Full docs
+└── 🧪 test_api.py               Tests
+
+
+🔧 REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Python 3.11 or 3.12 (recommended)
+✗ NOT Python 3.14 (incompatible!)
+✓ Anthropic API Key (get from console.anthropic.com)
+✓ Internet connection
+
+
+⚠️  IMPORTANT NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. DO NOT use gunicorn on Windows
+   → Use: python app.py
+   → Or: waitress-serve (installed automatically)
+
+2. DO NOT use Python 3.14
+   → Install Python 3.12 instead
+
+3. DO NOT commit .env to Git
+   → It contains your secret API keys
+
+4. DO keep your ANTHROPIC_API_KEY secret
+   → Never share it publicly
+
+
+🧪 TESTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Browser:
+  http://localhost:5000/         - Welcome page
+  http://localhost:5000/health   - Health check
+
+Automated:
+  python test_api.py             - Run all tests
+
+
+📡 API ENDPOINTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GET  /                   - API info
+GET  /health             - Health check
+POST /api/message        - Process scam message (requires API key)
+GET  /api/session/{id}   - Get session info (requires API key)
+
+
+🚀 DEPLOYMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Local:      python app.py
+Railway:    See DEPLOYMENT.md
+Render:     See DEPLOYMENT.md
+Heroku:     See DEPLOYMENT.md
+Docker:     docker-compose up
+
+
+🐛 COMMON ERRORS & FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Error: "No module named 'fcntl'"
+Fix: Don't use gunicorn on Windows. Use: python app.py
+
+Error: "TypeError: Client.__init__()"
+Fix: Install Python 3.12, not 3.14
+
+Error: "Unauthorized"
+Fix: Check your HONEYPOT_API_KEY matches in .env
+
+Error: "Not Found" in browser
+Fix: Make sure you added the root route to app.py
+
+→ For more: See TROUBLESHOOTING.md
+
+
+📞 GETTING HELP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Check WINDOWS_SETUP.md (detailed Windows instructions)
+2. Check TROUBLESHOOTING.md (common errors)
+3. Check QUICKSTART.md (5-minute setup)
+4. Check README.md (full documentation)
+
+
+✨ WHAT THIS DOES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Scammer sends message → API receives
+2. Claude AI analyzes → Detects scam
+3. AI Agent responds → Human-like reply
+4. Extracts intelligence → Bank accounts, UPI IDs, etc.
+5. Continues conversation → Keeps extracting info
+6. Sends final report → GUVI callback endpoint
+
+
+🎯 SUCCESS CRITERIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Server starts without errors
+✓ Browser shows welcome at http://localhost:5000/
+✓ Health check returns 200 OK
+✓ Tests pass (python test_api.py)
+✓ Scam messages are detected
+✓ Intelligence is extracted
+✓ Agent responses are natural
+
+
+🏆 GUVI HACKATHON SUBMISSION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This solution implements:
+✓ Scam detection API
+✓ Autonomous AI agent
+✓ Multi-turn conversations
+✓ Intelligence extraction
+✓ GUVI callback integration
+✓ RESTful API with authentication
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🎣 Happy Scam Hunting! 🎣
+
+       Built with Claude AI for GUVI Hackathon
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
